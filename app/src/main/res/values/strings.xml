@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">AniFlow</string>
+    <string name="nav_news">Notícias</string>
+    <string name="nav_schedule">Calendário</string>
+    <string name="nav_bookmarks">Salvos</string>
+    <string name="feed_title">AniFlow Feed</string>
+    <string name="schedule_title">Lançamentos da Semana</string>
+    <string name="pull_to_refresh">Puxe para atualizar</string>
+    <string name="loading">Carregando dados...</string>
+    <string name="error_loading">Não foi possível atualizar as informações. Exibindo dados em cache offline.</string>
+    <string name="retry">Tentar Novamente</string>
+    <string name="open_article">Ler matéria completa</string>
+    <string name="offline_badge">Modo Offline</string>
+    <string name="search_hint">Buscar notícias e animes...</string>
+    <string name="empty_news">Nenhuma notícia encontrada no momento.</string>
+    <string name="empty_schedule">Nenhum lançamento registrado para este dia.</string>
+    <string name="filter_all">Todos</string>
+    <string name="filter_anime">Anime</string>
+    <string name="filter_manga">Mangá</string>
+    <string name="filter_industry">Indústria</string>
+    <string name="status_airing">Transmitindo hoje</string>
+    <string name="status_upcoming">Em breve</string>
+    <string name="status_completed">Exibido</string>
+</resources>

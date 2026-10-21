@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Perfil e preferências do usuário autenticado no AniFlow",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "ID do usuário do Firebase Auth"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Nome de exibição da conta Google"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email da conta Google"
+        },
+        "photoUrl": {
+          "type": "string",
+          "description": "Foto de perfil do usuário"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Data da última atualização via FieldValue.serverTimestamp()"
+        }
+      },
+      "required": ["userId", "displayName", "updatedAt"]
+    },
+    "UserBookmark": {
+      "title": "UserBookmark",
+      "description": "Notícia salva nos favoritos pelo usuário sincronizada na nuvem",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID da notícia ou matéria"
+        },
+        "userId": {
+          "type": "string",
+          "description": "ID do usuário proprietário do favorito"
+        },
+        "title": {
+          "type": "string",
+          "description": "Título da matéria"
+        },
+        "source": {
+          "type": "string",
+          "description": "Fonte da matéria (ex: Crunchyroll, ANN)"
+        },
+        "category": {
+          "type": "string",
+          "description": "Categoria da matéria (ex: Anime, Mangá)"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL da capa da matéria"
+        },
+        "articleUrl": {
+          "type": "string",
+          "description": "URL externa da matéria"
+        },
+        "savedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp de salvamento via FieldValue.serverTimestamp()"
+        }
+      },
+      "required": ["id", "userId", "title", "savedAt"]
+    },
+    "UserTrackedAnime": {
+      "title": "UserTrackedAnime",
+      "description": "Anime acompanhado pelo usuário no calendário semanal",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID do anime"
+        },
+        "userId": {
+          "type": "string",
+          "description": "ID do usuário autenticado"
+        },
+        "animeTitle": {
+          "type": "string",
+          "description": "Título do anime"
+        },
+        "dayOfWeek": {
+          "type": "integer",
+          "description": "Dia da semana (1 a 7)"
+        },
+        "airingTime": {
+          "type": "string",
+          "description": "Horário de exibição do episódio"
+        },
+        "episodeNumber": {
+          "type": "integer",
+          "description": "Número do episódio"
+        },
+        "trackedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp do registro via FieldValue.serverTimestamp()"
+        }
+      },
+      "required": ["id", "userId", "animeTitle", "dayOfWeek", "trackedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Coleção raiz de perfis dos usuários"
+    },
+    "/users/{userId}/bookmarks/{bookmarkId}": {
+      "schema": "UserBookmark",
+      "description": "Subcoleção de matérias salvas pelo usuário"
+    },
+    "/users/{userId}/tracked/{trackedId}": {
+      "schema": "UserTrackedAnime",
+      "description": "Subcoleção de animes acompanhados pelo usuário"
+    }
+  }
+}

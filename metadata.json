@@ -1,0 +1,6 @@
+{
+  "name": "AniFlow",
+  "description": "Agregador de notícias e lançamentos de animes da temporada com suporte offline-first.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
